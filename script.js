@@ -1,18 +1,61 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const labels = document.querySelectorAll('.oval-label');
+let lastScrollTop = 0;
+const navbar = document.getElementById('main-header');
 
-    labels.forEach(function(label) {
-        const icon = label.querySelector('.label-icon');
-        const select = label.nextElementSibling;
+window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Ubah ikon saat label atau dropdown diklik
-        select.addEventListener('change', function () {
-            icon.innerHTML = select.value === "10" ? '&#128197;' : '&#128100;'; // Mengubah ikon berdasarkan nilai select
-        });
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        navbar.classList.add('hidden');
+        navbar.classList.remove('transparent');
+    } else {
+        // Scrolling up
+        navbar.classList.remove('hidden');
+        navbar.classList.add('transparent');
+    }
 
-        // Atau ubah ikon ketika label diklik
-        label.addEventListener('click', function () {
-            icon.innerHTML = icon.innerHTML === '&#128197;' ? '&#128100;' : '&#128197;'; // Mengubah ikon secara bergantian
-        });
-    });
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 });
+
+// Lazy loading initialization
+const lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazyload"
+});
+
+const template1 = (index) => `
+    <div class="card">
+        <img src="img/hp.png" alt="Card image ${index}" class="lazyload">
+        <div class="card-content">
+            <p>5 September 2022</p>
+            <h3 class="ellipsis">Kenali Tingkatan Influencers berdasarkan Jumlah Followers</h3>
+        </div>
+    </div>
+`;
+
+const template2 = (index) => `
+    <div class="card">
+        <img src="img/rekam.jpg" alt="Card image ${index}" class="lazyload">
+        <div class="card-content">
+            <p>5 September 2022</p>
+            <h3 class="ellipsis">Jangan Asal Pilih Influencer, Berikut Cara Menyusun Strategi Influencer</h3>
+        </div>
+    </div>
+`;
+document.addEventListener("DOMContentLoaded", function() {
+    const cardsContainer = document.querySelector('.cards-container');
+    const totalCards = 100;
+
+    for (let i = 1; i <= totalCards; i++) {
+        // Menentukan template mana yang akan digunakan
+        let cardHTML;
+        if (i % 2 === 0) {
+            cardHTML = template2(i);
+        } else {
+            cardHTML = template1(i);
+        }
+
+        // Menambahkan card ke dalam container utama
+        cardsContainer.insertAdjacentHTML('beforeend', cardHTML);
+    }
+});
+

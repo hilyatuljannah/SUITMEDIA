@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -39,8 +37,7 @@ header {
 
 .logo-suitmedia img {
     height: 90px;
-    width: 120px;; /* Maintain aspect ratio */
-
+    width: 120px; /* Maintain aspect ratio */
 }
 
 nav ul {
@@ -78,13 +75,12 @@ nav a.active::after {
     border-bottom: 4px solid white; /* Style of the underline */
 }
 
-
 .banner {
     position: relative;
     overflow: hidden;
     height: 500px;
 }
-    
+
 .banner-image {
     background-image: url(img/banner.jpg);
     opacity: 65%;
@@ -93,21 +89,21 @@ nav a.active::after {
     background-attachment: fixed;
     background-position: center;
     height: 100%;
-    clip-path: polygon(0 0%, 100% 0%, 100% 50%, 0% 90%);
+    clip-path: polygon(0 0%, 100% 0%, 100% 60%, 0% 90%);
     position: relative;
     z-index: 1;
 }
 
 .banner::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.178), #202020);
-        clip-path: polygon(0 0%, 100% 0%, 100% 50%, 0% 90%);
-        z-index: 2; /* Ensure it's above the image */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.178), #202020);
+    clip-path: polygon(0 0%, 100% 0%, 100% 60%, 0% 90%);
+    z-index: 2; /* Ensure it's above the image */
 }
 
 .banner-text {
@@ -134,10 +130,13 @@ nav a.active::after {
 
 main {
     padding: 20px;
-    padding-top: 120px; /* Adjust top padding to accommodate the fixed header */
+    margin-left: 70px;
+    margin-right: 70px;
+    padding-top: 30px; /* Adjust top padding to accommodate the fixed header */
 }
 
 .content-header {
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -156,19 +155,20 @@ main {
 .content-controls label {
     margin-right: 5px;
     font-size: 14px;
+    text-align: center;
     color: #333;
 }
 
 .content-controls select {
     margin-right: 10px;
-    padding: 5px;
+    padding: 11px;
+    width: 135px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 20px;
     font-size: 14px;
     background-color: #fff;
     cursor: pointer;
 }
-
 
 .cards-container {
     display: grid;
@@ -200,13 +200,17 @@ main {
 }
 
 .card-content h3 {
-    margin: 10px 0 0;
-    font-size: 1.1em;
+    font-size: 15px;
     color: #333;
-    max-height: 3.3em; /* Limits the height to approximately 3 lines */
+    max-height: 4.5em; /* 1.5em per baris * 3 baris */
+    line-height: 1.5em; /* Menyesuaikan tinggi setiap baris */
     overflow: hidden;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Membatasi ke 3 baris */
+    -webkit-box-orient: vertical;
 }
+
 
 .pagination {
     text-align: center;
