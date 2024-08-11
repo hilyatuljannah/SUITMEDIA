@@ -1,0 +1,236 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header.hidden {
+    top: -100px; /* Adjust as needed to completely hide the header */
+}
+
+header.transparent {
+    background-color: rgba(255, 112, 68, 0.748);
+}
+
+header {
+    background-color: #fc6f1e;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centering the nav within the header */
+    align-items: center; /* Vertically center the nav items */
+    transition: top 0.3s, background-color 0.3s;
+}
+
+.nav-bar {
+    display: flex;
+    height: 50px;
+    justify-content: space-between; /* Spaces items evenly between the start and end */
+    align-items: center;
+    width: 80%; /* Adjust as needed to fit the design */
+}
+
+.logo-suitmedia img {
+    height: 90px;
+    width: 120px;; /* Maintain aspect ratio */
+
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Add space between nav items */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffd7b2; /* Slightly lighter color on hover */
+}
+
+nav a.active {
+    position: relative;
+    color: white;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -1px; /* Adjust position to align underline */
+    transform: translateX(-50%);
+    width: 38px; /* Length of the underline */
+    border-bottom: 4px solid white; /* Style of the underline */
+}
+
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+    
+.banner-image {
+    background-image: url(img/banner.jpg);
+    opacity: 65%;
+    filter: saturate(0%);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+    clip-path: polygon(0 0%, 100% 0%, 100% 50%, 0% 90%);
+    position: relative;
+    z-index: 1;
+}
+
+.banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.178), #202020);
+        clip-path: polygon(0 0%, 100% 0%, 100% 50%, 0% 90%);
+        z-index: 2; /* Ensure it's above the image */
+}
+
+.banner-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    font-family: Arial, sans-serif;
+}
+
+/* Tambahkan gaya untuk teks */
+.banner-text h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.banner-text p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    padding-top: 120px; /* Adjust top padding to accommodate the fixed header */
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.content-header span {
+    font-size: 14px;
+    color: #333;
+}
+
+.content-controls {
+    display: flex;
+    align-items: center;
+}
+
+.content-controls label {
+    margin-right: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.content-controls select {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 150px; /* Consistent height for all images */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.card-content p {
+    margin: 0;
+    color: #555;
+}
+
+.card-content h3 {
+    margin: 10px 0 0;
+    font-size: 1.1em;
+    color: #333;
+    max-height: 3.3em; /* Limits the height to approximately 3 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #ff5722;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    font-weight: bold;
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

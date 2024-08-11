@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideas - Suitmedia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="nav-bar">
+            <ul class="logo-suitmedia">
+                <img src="img/logo.png" alt="Logo">
+            </ul>
+            <nav>
+                <ul>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#" class="active">Ideas</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="banner-image"></div>
+        <div class="banner-text">
+            <h1>Ideas</h1>
+            <p>Where all our great things begin</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="content-header">
+            <span>Showing 1 - 10 of 100</span>
+            <div class="content-controls">
+                <label for="show-per-page">Show per page:</label>
+                <select id="show-per-page">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                </select>
+            </div>
+        </div>
+        <div class="cards-container">
+            <!-- Repeat this card as necessary -->
+            <div class="card">
+                <img data-src="image1.jpg" alt="Card image" class="lazyload">
+                <div class="card-content">
+                    <p>5 September 2022</p>
+                    <h3 class="ellipsis">Kenali Tingkatan Influencers berdasarkan Jumlah Followers</h3>
+                </div>
+            </div>
+            <!-- Repeat ends -->
+        </div>
+        <div class="pagination">
+            <a href="#" class="prev disabled">Prev</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <span>...</span>
+            <a href="#">10</a>
+            <a href="#" class="next">Next</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Suitmedia. All rights reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.2/lazyload.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
