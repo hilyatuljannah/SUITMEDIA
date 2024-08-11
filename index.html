@@ -35,7 +35,7 @@
 
     <main>
         <div class="content-header">
-            <span>Showing 1 - 10 of 100</span>
+            <span id="page-info">Showing 1 - 10 of 100</span>
             <div class="content-controls">
                 <label for="show-per-page">Show per page:</label>
                 <select id="show-per-page">
@@ -45,6 +45,7 @@
                 </select>
                 <label for="sort">Sort by:</label>
                 <select id="sort">
+                    <option value="default">Default</option>
                     <option value="newest">Newest</option>
                     <option value="oldest">Oldest</option>
                 </select>
@@ -54,14 +55,14 @@
             <!-- Konten akan di-generate oleh JavaScript -->
         </div>
         <div class="pagination">
-            <a href="#" class="prev disabled">Prev</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <span>...</span>
-            <a href="#">10</a>
-            <a href="#" class="next">Next</a>
+            <button id="prev-page">&laquo;</button> <!-- Simbol << -->
+            <button id="prev-page-single">&lt;</button> <!-- Simbol < -->
+            <div id="pagination-numbers"></div> <!-- Menampilkan nomor halaman -->
+            <button id="next-page-single">&gt;</button> <!-- Simbol > -->
+            <button id="next-page">&raquo;</button> <!-- Simbol >> -->
         </div>
+             
+        
     </main>
     <footer>
         <p>&copy; 2024 Suitmedia. All rights reserved.</p>
